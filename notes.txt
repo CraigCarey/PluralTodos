@@ -1,0 +1,11 @@
+Install nvm
+$ nvm install 6.11.4 (latest LTS version)
+$ npm install -g create-react-native-app
+$ npm install -g watchman
+$ create-react-native-app lms
+$ cd AwesomeProject
+$ npm start
+
+
+In emulator, press CTRL + CMD + z to launch developer tools
+Select 'Debug Remote JS' to debug in Chrome
