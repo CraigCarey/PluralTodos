@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-
 import { View, StyleSheet, ListView, TouchableHighlight, Text } from 'react-native';
-
 import TaskRow from './TaskRow'
 
 const styles = StyleSheet.create({
@@ -49,19 +47,19 @@ export default class TaskList extends Component {
 
     render() {
         return (
-            <View style={styles.container}>
+            <View style={styles.container} >
                 <ListView
                     dataSource={this.state.dataSource}
-                    renderRow={this.renderRow.bind(this)}
-                />
+                    renderRow={this.renderRow.bind(this)} />
 
                 <TouchableHighlight
                     onPress={this.props.onAddStarted}
-                    style={styles.button}
-                >
-                    <Text style={styles.buttonText}>
+                    style={styles.button} >
+
+                    <Text style={styles.buttonText} >
                         Add One
                     </Text>
+
                 </TouchableHighlight>
             </View>
         );

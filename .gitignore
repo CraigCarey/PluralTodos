@@ -5,5 +5,4 @@ node_modules/
 .babelrc
 .flowconfig
 .watchmanconfig
-README.md
 .idea/

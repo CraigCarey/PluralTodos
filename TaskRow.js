@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-
 import { View, Text, StyleSheet  } from 'react-native';
 
 const styles = StyleSheet.create({
@@ -21,7 +20,6 @@ const styles = StyleSheet.create({
     }
 });
 
-
 export default class TaskRow extends Component {
 
     constructor(props, context) {
@@ -33,8 +31,10 @@ export default class TaskRow extends Component {
 
     render() {
         return (
-            <View style={styles.container}>
-                <Text style={styles.label}>{this.props.todo.task}</Text>
+            <View style={styles.container} >
+                <Text style={styles.label} >
+                    {this.props.todo.task}
+                </Text>
             </View>
         );
     }
