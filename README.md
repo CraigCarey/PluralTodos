@@ -11,6 +11,7 @@ $ npm install -g create-react-native-app
 $ npm install -g watchman
 $ create-react-native-app PluralTodos
 $ npm install --save react-navigation
+$ npm install --save prop-types
 $ cd PluralTodos
 $ npm start
 ```

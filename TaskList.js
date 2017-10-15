@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { View, StyleSheet, ListView, TouchableHighlight, Text } from 'react-native';
 import TaskRow from './TaskRow'
 
@@ -57,7 +58,8 @@ export default class TaskList extends Component {
             <View style={styles.container} >
                 <ListView
                     dataSource={this.state.dataSource}
-                    renderRow={this.renderRow.bind(this)} />
+                    renderRow={this.renderRow.bind(this)}
+                    enableEmptySections={true}/>
 
                 <TouchableHighlight
                     onPress={this.props.onAddStarted}
@@ -72,3 +74,7 @@ export default class TaskList extends Component {
         );
     }
 }
+
+TaskList.propTypes = {
+    todos: PropTypes.arrayOf(PropTypes.object).isRequired,
+};

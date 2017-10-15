@@ -21,6 +21,7 @@ class PluralTodo extends Component {
                 },
             ],
         };
+        console.ignoredYellowBox = ['Remote debugger'];
     }
 
     onAddTask(task) {

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { View, Text, StyleSheet, TouchableHighlight  } from 'react-native';
 
 const styles = StyleSheet.create({
@@ -53,3 +54,10 @@ export default class TaskRow extends Component {
         );
     }
 }
+
+TaskRow.propTypes = {
+    onDone: PropTypes.func.isRequired,
+    todo: PropTypes.shape({
+        task: PropTypes.string.isRequired,
+    }).isRequired,
+};
