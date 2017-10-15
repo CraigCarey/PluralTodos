@@ -38,12 +38,24 @@ class PluralTodo extends Component {
     onAddStarted() {
         this.props.navigation.navigate('TaskForm',
             { onCancel: this.onCancelAddTask.bind(this),
-                onAdd: this.onAddTask.bind(this) })
+                onAdd: this.onAddTask.bind(this) });
     }
+
+    onTaskDone(todo) {
+        console.log('Todo was completed: ', todo.task);
+        const filteredTodos =
+            this.state.todos.filter((filterTodo) => {
+            return filterTodo !== todo;
+        });
+
+        this.setState({ todos: filteredTodos });
+    }
+
 
     render() {
         return <TaskList
             onAddStarted={this.onAddStarted.bind(this)}
+            onDone={this.onTaskDone.bind(this)}
             todos={this.state.todos} />
     }
 }

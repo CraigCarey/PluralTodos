@@ -46,7 +46,9 @@ export default class TaskList extends Component {
 
     renderRow(todo) {
         return (
-            <TaskRow todo={todo}/>
+            <TaskRow
+                onDone={this.props.onDone}
+                todo={todo} />
         );
     }
 
