@@ -26,6 +26,8 @@ class PluralTodo extends Component {
     onAddTask(task) {
         console.log('Adding task: ', task);
         this.props.navigation.goBack(null);
+        this.state.todos.push({ task });
+        this.setState({ todos: this.state.todos });
     }
 
     onCancelAddTask() {

@@ -1,4 +1,7 @@
-# Getting started
+When I was working through Pluralsight's 'Build Cross Platform React Native Apps with Exponent and Redux' course I
+noticed parts of it use deprecated components. This is an attempt to rewrite it using more up to date techniques.
+
+## Getting started
 
 ```bash
 $ brew install nvm
