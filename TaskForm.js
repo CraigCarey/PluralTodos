@@ -45,28 +45,40 @@ export default class TaskForm extends Component {
 
     constructor(props, context) {
         super(props, context);
+    }
 
-        this.state = {
-            task: ''
-        }
+    onInputChange(text) {
+        this.task = text;
+    }
+
+    onAddPressed() {
+        this.props.navigation.state.params.onAdd(this.task)
     }
 
     render() {
         return (
             <View style={styles.container}>
 
-                <TextInput style={styles.input} />
+                <TextInput style={styles.input} onChangeText={this.onInputChange.bind(this)}/>
 
-                <TouchableHighlight style={styles.button}>
+                <TouchableHighlight
+                    style={styles.button}
+                    onPress={this.onAddPressed.bind(this)}>
+
                     <Text style={styles.buttonText}>
                         Add
                     </Text>
+
                 </TouchableHighlight>
 
-                <TouchableHighlight style={[styles.button, styles.cancelButton]}>
+                <TouchableHighlight
+                    style={[styles.button, styles.cancelButton]}
+                    onPress={this.props.navigation.state.params.onCancel}>
+
                     <Text style={styles.buttonText}>
                         Cancel
                     </Text>
+
                 </TouchableHighlight>
 
             </View>

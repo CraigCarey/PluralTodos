@@ -65,8 +65,3 @@ export default class TaskList extends Component {
         );
     }
 }
-
-TaskList.propTypes = {
-    onAddStarted: React.PropTypes.func.isRequired,
-    todos: React.PropTypes.arrayOf(React.PropTypes.object).isRequired
-};

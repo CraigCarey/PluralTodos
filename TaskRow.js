@@ -39,9 +39,3 @@ export default class TaskRow extends Component {
         );
     }
 }
-
-TaskRow.propTypes = {
-    todo: React.PropTypes.shape({
-        task: React.PropTypes.string.isRequired,
-    }).isRequired,
-};
