@@ -47,23 +47,23 @@ export default class TaskForm extends Component {
         super(props, context);
     }
 
-    onInputChange(text) {
+    onInputChange = (text) => {
         this.task = text;
-    }
+    };
 
-    onAddPressed() {
+    onAddPressed = () => {
         this.props.navigation.state.params.onAdd(this.task)
-    }
+    };
 
     render() {
         return (
             <View style={styles.container}>
 
-                <TextInput style={styles.input} onChangeText={this.onInputChange.bind(this)}/>
+                <TextInput style={styles.input} onChangeText={this.onInputChange}/>
 
                 <TouchableHighlight
                     style={styles.button}
-                    onPress={this.onAddPressed.bind(this)}>
+                    onPress={this.onAddPressed}>
 
                     <Text style={styles.buttonText}>
                         Add

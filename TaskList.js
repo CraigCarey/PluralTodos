@@ -45,20 +45,20 @@ export default class TaskList extends Component {
         this.setState({ dataSource });
     }
 
-    renderRow(todo) {
+    renderRow = (todo) => {
         return (
             <TaskRow
                 onDone={this.props.onDone}
                 todo={todo} />
         );
-    }
+    };
 
     render() {
         return (
             <View style={styles.container} >
                 <ListView
                     dataSource={this.state.dataSource}
-                    renderRow={this.renderRow.bind(this)}
+                    renderRow={this.renderRow}
                     enableEmptySections={true}/>
 
                 <TouchableHighlight

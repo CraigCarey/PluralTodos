@@ -32,9 +32,9 @@ export default class TaskRow extends Component {
         super(props, context);
     }
 
-    onDonePressed() {
+    onDonePressed = () => {
         this.props.onDone(this.props.todo);
-    }
+    };
 
     render() {
         return (
@@ -44,7 +44,7 @@ export default class TaskRow extends Component {
                 </Text>
 
                 <TouchableHighlight
-                    onPress={this.onDonePressed.bind(this)}
+                    onPress={this.onDonePressed}
                     style={styles.doneButton}  >
                     <Text>
                         Done

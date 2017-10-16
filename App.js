@@ -24,25 +24,25 @@ class PluralTodo extends Component {
         console.ignoredYellowBox = ['Remote debugger'];
     }
 
-    onAddTask(task) {
+    onAddTask = (task) => {
         console.log('Adding task: ', task);
         this.props.navigation.goBack(null);
         this.state.todos.push({ task });
         this.setState({ todos: this.state.todos });
-    }
+    };
 
-    onCancelAddTask() {
+    onCancelAddTask = () => {
         console.log('Cancelled adding task');
         this.props.navigation.goBack(null);
-    }
+    };
 
-    onAddStarted() {
+    onAddStarted = () => {
         this.props.navigation.navigate('TaskForm',
-            { onCancel: this.onCancelAddTask.bind(this),
-                onAdd: this.onAddTask.bind(this) });
-    }
+            { onCancel: this.onCancelAddTask,
+                onAdd: this.onAddTask });
+    };
 
-    onTaskDone(todo) {
+    onTaskDone = (todo) => {
         console.log('Todo was completed: ', todo.task);
         const filteredTodos =
             this.state.todos.filter((filterTodo) => {
@@ -50,13 +50,13 @@ class PluralTodo extends Component {
         });
 
         this.setState({ todos: filteredTodos });
-    }
+    };
 
 
     render() {
         return <TaskList
-            onAddStarted={this.onAddStarted.bind(this)}
-            onDone={this.onTaskDone.bind(this)}
+            onAddStarted={this.onAddStarted}
+            onDone={this.onTaskDone}
             todos={this.state.todos} />
     }
 }
