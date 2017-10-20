@@ -4,15 +4,10 @@ noticed parts of it use deprecated components. This is an attempt to rewrite it 
 ## Getting started
 
 ```bash
-$ brew install nvm
+$ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.5/install.sh | bash
 $ nvm install 6.11.4 # (latest LTS version)
 $ nvm use 6.11.4
-$ npm install -g create-react-native-app
-$ npm install -g watchman
-$ create-react-native-app PluralTodos
-$ npm install --save react-navigation
-$ npm install --save prop-types
-$ cd PluralTodos
+$ npm install
 $ npm start
 ```
 
